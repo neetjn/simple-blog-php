@@ -1,0 +1,32 @@
+ /*<?php
+
+	require_once('connect.php');
+	require_once('blog.php');
+
+	$blog = new Blog; // instantiate blog class
+	for($i=0;$i<$blog->post_count;$i++) {
+
+  		print_r($blog->posts[$i]); // print every single post in blog
+	}
+*/
+
+/*<?php
+
+	require_once('connect.php');
+	require_once('blog.php');
+
+	$blog = new Blog; // instantiate blog class
+	echo("<h3>$blog->posts[$blog->post_count]['post_title']</h3>"); // print latest post title
+	echo("<p>$blog->posts[$blog->post_count]['post_content']</p>"); // print latest post content 
+*/
+
+/*<?php
+
+	require_once('connect.php');
+	require_once('blog.php');
+
+	$blog = new Blog; // instantiate blog class
+	$post = new Post($blog->posts[$blog->post_count]['id']); // load latest post
+	echo("<h3>$post->data['post_title']</h3>"); // print latest post title
+	echo("<p>$post->data['post_content']</p>"); // print latest post content 
+*/
