@@ -6,6 +6,7 @@ Examples
 =
 ```php
 <?php
+
   include( 'blog.php' );
   
   $blog = new Blog();
@@ -23,6 +24,7 @@ Examples
   $blog->post->comment->_invoke( POST_ID, AUTHOR_ID, 'content' ); // comment on existing post
   
   $comment = $blog->comment->get->_invoke( COMMENT_ID ); // get comment data as array
+  
 ?>
 ```
 
