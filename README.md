@@ -16,13 +16,14 @@ Examples
   	$content = $post->data['post_content'];
   	echo( "<p>$content</p><br />" );
   	/*
-  	 * output all post comments 
+  	 * interate through all post comments
+  	 *
   	  
-  	  foreach( $post->data['comments'] as $comment ):
-  	    ...
-  	  endforeach;
+    	  foreach( $post->data['comments'] as $comment ):
+    	    ...
+    	  endforeach;
   	
-  	*/
+  	 */
   endforeach; // output all posts
   
   $blog->post->create->_invoke( AUTHOR_ID, 'title', 'content' ); // create new post
