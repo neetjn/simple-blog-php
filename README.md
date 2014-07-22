@@ -11,10 +11,18 @@ Examples
   
   $blog = new Blog();
   foreach( $blog->data['posts'] as $post ):
-  	$title = $post['post_title'];
+  	$title = $post->data['post_title'];
   	echo( "<h2>Title: $title</h2>" );
-  	$content = $post['post_content'];
+  	$content = $post->data['post_content'];
   	echo( "<p>$content</p><br />" );
+  	/*
+  	 * output all post comments 
+  	  
+  	  foreach( $post->data['comments'] as $comment ):
+  	    ...
+  	  endforeach;
+  	
+  	*/
   endforeach; // output all posts
   
   $blog->post->create->_invoke( AUTHOR_ID, 'title', 'content' ); // create new post
@@ -22,8 +30,6 @@ Examples
   $post = $blog->post->get->_invoke( POST_ID ); // get post data as array
   
   $blog->post->comment->_invoke( POST_ID, AUTHOR_ID, 'content' ); // comment on existing post
-  
-  $comment = $blog->comment->get->_invoke( COMMENT_ID ); // get comment data as array
   
 ?>
 ```
