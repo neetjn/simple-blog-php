@@ -10,12 +10,12 @@ Examples
   include( 'blog.php' );
   
   $blog = new Blog();
-  for( $i = sizeof( $blog->data['posts'] )-1; $i+1 > 0; $i-- ):
-  	$title = $blog->data['posts'][$i]['post_title'];
+  foreach( $blog->data['posts'] as $post ):
+  	$title = $post['post_title'];
   	echo( "<h2>Title: $title</h2>" );
-  	$post = $blog->data['posts'][$i]['post_content'];
-  	echo( "<p>$post</p><br />" );
-  endfor; // output all posts
+  	$content = $post['post_content'];
+  	echo( "<p>$content</p><br />" );
+  endforeach; // output all posts
   
   $blog->post->create->_invoke( AUTHOR_ID, 'title', 'content' ); // create new post
   
