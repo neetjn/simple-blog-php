@@ -9,6 +9,9 @@
         /*
          * $this->data as multi-dimensional array
          * $this->post as stdClass
+         * $this->post->get as dynamic function
+         * $this->post->create as dynamic function
+         * $this->post->comment as dynamic function
          */
 
         public function __construct() {
