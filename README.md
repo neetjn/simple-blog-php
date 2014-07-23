@@ -1,7 +1,6 @@
 Blog (PHP)
 =
->Very simple blog backend, includes post & comment features.
-
+>A very simple and lightweight blog backend.
 Examples
 =
 ```php
