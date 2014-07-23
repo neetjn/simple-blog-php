@@ -69,12 +69,15 @@
             };
             
             $this->post->create = function($author, $title, $content) {
-
+		
+		$title = str_replace("'", "\'", $title);
+                $content = str_replace("'", "\'", $content);
                 mysql_query( "INSERT INTO `blog_posts` (`id`, `author_id`, `post_date`, `post_title`, `post_content`, `post_comments`) VALUES (NULL, '$author', CURRENT_TIMESTAMP, '$title', '$content', '0')" );
             };
             
             $this->post->comment = function($post_id, $author, $content) {
 
+		$content = str_replace("'", "\'", $content);
                 $post = mysql_fetch_assoc( mysql_query( "SELECT * FROM `blog_posts` WHERE `id` = '$post_id'" ) );
                 if( $post ) {
 			$comments = ( (int) $post['post_comments'] ) + 1; 
