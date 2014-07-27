@@ -34,9 +34,9 @@
 				$select_comments = mysql_query( "SELECT * FROM `blog_comments` WHERE `post_id` = '$post_id'" );
 				while ( $row = mysql_fetch_assoc( $select_comments ) ):
 					$user_id = $row['author_id'];
-					$author = mysql_fetch_assoc( mysql_query( "SELECT * FROM `users` WHERE `id` = '$user_id'" ) );
+					$commentor = mysql_fetch_assoc( mysql_query( "SELECT * FROM `users` WHERE `id` = '$user_id'" ) );
 					$comment = array(
-						'author' => $author['username'],
+						'author' => $commentor['username'],
 						'content' => $row['comment_content']
 					);
 					$comments[] = $comment;
