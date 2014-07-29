@@ -80,8 +80,7 @@
 		$content = str_replace("'", "\'", $content);
                 $post = mysql_fetch_assoc( mysql_query( "SELECT * FROM `blog_posts` WHERE `id` = '$post_id'" ) );
                 if( $post ) {
-			$comments = ( (int) $post['post_comments'] ) + 1; 
-			mysql_query( "UPDATE `blog_posts` SET `post_comments` = '$comments' WHERE `id` = '$post_id'" );
+			mysql_query( "UPDATE `blog_posts` SET `post_comments` = `post_comments` + 1, `post_date` = `post_date` WHERE `id` = '$post_id'" );
 			mysql_query( "INSERT INTO `blog_comments` (`id`, `post_id`, `author_id`, `comment_content`) VALUES (NULL, '$post_id', '$author', '$content')" );
 		} else {
 			return false;
